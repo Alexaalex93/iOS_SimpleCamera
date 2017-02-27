@@ -28,6 +28,10 @@ class PhotoViewController: UIViewController {
     // MARK: - Action methods
     
     @IBAction func save(sender: UIButton) {
+        guard let imageToSave = image else { return  }
+        
+        UIImageWriteToSavePhotosAlbum(imageToSave, nil, nil, nil)
+        dismiss(animated: true, completion: nil)
     }
 
 }
